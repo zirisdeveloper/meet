@@ -1,4 +1,4 @@
-package com.ziri.flutter_app_1
+package com.ziris.meet
 
 import io.flutter.embedding.android.FlutterActivity
 

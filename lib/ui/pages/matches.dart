@@ -1,3 +1,4 @@
+
 import 'package:meet/bloc/matches/bloc.dart';
 import 'package:meet/models/user.dart';
 import 'package:meet/repositories/matchesRepository.dart';
@@ -55,16 +56,17 @@ class _MatchesState extends State<Matches> {
           return CircularProgressIndicator();
         }
         if (state is LoadUserState) {
-          return CustomScrollView(
+          return CustomScrollView(            
             slivers: <Widget>[
-              SliverAppBar(
+              SliverAppBar(                
                 pinned: true,
-                backgroundColor: Colors.white,
+                shape: Border.all(color: Colors.yellow[300],width: 3.0,style:BorderStyle.solid),                
+                backgroundColor: Colors.yellow[200],
                 title: Text(
-                  "Matched User",
+                  "Matched Users",
                   style: TextStyle(color: Colors.black, fontSize: 30.0),
                 ),
-              ),
+              ),              
               StreamBuilder<QuerySnapshot>(
                 stream: state.matchedList,
                 builder: (context, snapshot) {
@@ -213,8 +215,9 @@ class _MatchesState extends State<Matches> {
                 },
               ),
               SliverAppBar(
-                backgroundColor: Colors.white,
+                backgroundColor: Colors.green[200],
                 pinned: true,
+                shape: Border.all(color: Colors.lightGreen[300],width: 3.0,style:BorderStyle.solid),
                 title: Text(
                   "Someone Likes You",
                   style: TextStyle(color: Colors.black, fontSize: 30),
